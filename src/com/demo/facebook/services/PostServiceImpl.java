@@ -7,6 +7,9 @@ public class PostServiceImpl implements PostService {
     @Override
     public void createPost(User user, String description) {
         Post post= new Post(description, user);
+
+        // is it wise to add it in profile??
+        user.getProfile().addPost(post);
     }
 
     @Override
