@@ -1,16 +1,18 @@
 package com.demo.facebook.dto;
 
 import com.demo.facebook.enums.*;
+import com.demo.facebook.followRequestState.*;
 
 public class FollowRequest {
     private User sender;
     private User receiver;
-    private FollowRequestStatus followRequestStatus;
+    private State followRequestStatus;
 
-    public FollowRequest(User sender, User receiver, FollowRequestStatus followRequestStatus) {
+    public FollowRequest(User sender, User receiver) {
         this.sender = sender;
         this.receiver = receiver;
-        this.followRequestStatus = followRequestStatus;
+        this.followRequestStatus = new HoldState();
+
     }
 
     public User getSender() {
@@ -29,11 +31,11 @@ public class FollowRequest {
         this.receiver = receiver;
     }
 
-    public FollowRequestStatus getFollowRequestStatus() {
+    public State getFollowRequestStatus() {
         return followRequestStatus;
     }
 
-    public void setFollowRequestStatus(FollowRequestStatus followRequestStatus) {
+    public void setFollowRequestStatus(State followRequestStatus) {
         this.followRequestStatus = followRequestStatus;
     }
 }
