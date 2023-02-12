@@ -46,4 +46,15 @@ public class User {
     public void setCelebrity(boolean celebrity) {
         isCelebrity = celebrity;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", profile=" + profile +
+                ", isCelebrity=" + isCelebrity +
+                '}';
+    }
 }

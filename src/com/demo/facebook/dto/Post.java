@@ -39,4 +39,14 @@ public class Post {
     public void addLike(Like like){
         likes.add(like);
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "description='" + description + '\'' +
+                ", createdBy=" + createdBy +
+                ", comments=" + comments +
+                ", likes=" + likes +
+                '}';
+    }
 }

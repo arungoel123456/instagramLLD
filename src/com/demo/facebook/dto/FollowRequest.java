@@ -7,6 +7,12 @@ public class FollowRequest {
     private User receiver;
     private FollowRequestStatus followRequestStatus;
 
+    public FollowRequest(User sender, User receiver, FollowRequestStatus followRequestStatus) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.followRequestStatus = followRequestStatus;
+    }
+
     public User getSender() {
         return sender;
     }
