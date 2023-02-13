@@ -9,6 +9,14 @@ public class Like {
     private Post post;
     private Comment comment;
 
+    public Like(LikeType likeType, LikeOn likeOn, User createdBy, Post post, Comment comment) {
+        this.likeType = likeType;
+        this.likeOn = likeOn;
+        this.createdBy = createdBy;
+        this.post = post;
+        this.comment = comment;
+    }
+
     public LikeType getLikeType() {
         return likeType;
     }

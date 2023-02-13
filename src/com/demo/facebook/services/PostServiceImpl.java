@@ -7,14 +7,13 @@ public class PostServiceImpl implements PostService {
     @Override
     public void createPost(User user, String description) {
         Post post= new Post(description, user);
-
-        // is it wise to add it in profile??
         user.getProfile().addPost(post);
+
+        // should I call timeline service to push to everyone's timeline??
     }
 
     @Override
     public void commentOnPost(Comment comment, Post post) {
-        // is it right to store comments in post?
         post.addComment(comment);
     }
 
