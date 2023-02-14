@@ -10,7 +10,7 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public void likeOnPost(Post post, LikeType likeType, User user) {
-        Like like= new Like(likeType, LikeOn.POST, user, post, null);
+        Like like= new Like(likeType, user, post, null);
         // should I add like in post also??
         postService.likeOnPost(post, like);
     }
@@ -18,11 +18,12 @@ public class LikeServiceImpl implements LikeService {
     @Override
     public void unlikeOnPost(Post post, Like like) {
         // should I make this in post service??
+        post.removeLike(like);
     }
 
     @Override
     public void likeOnComment(Comment comment, LikeType likeType, User user) {
-        Like like= new Like(likeType, LikeOn.COMMENT, user,null, comment);
+        Like like= new Like(likeType, user,null, comment);
         // should I add it to comment also??
         commentService.likeOnComment(like, comment);
     }

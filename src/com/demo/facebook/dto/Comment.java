@@ -2,17 +2,16 @@ package com.demo.facebook.dto;
 
 import java.util.*;
 
-public class Comment {
+public class Comment extends Likeable {
     private String description;
     private User createdBy;
     private Post post;
-    private List<Like> likes;
 
     public Comment(String description, User createdBy, Post post) {
+        super();
         this.description = description;
         this.createdBy = createdBy;
         this.post = post;
-        likes= new ArrayList<Like>();
     }
 
     public String getDescription() {
@@ -38,10 +37,5 @@ public class Comment {
     public void setPost(Post post) {
         this.post = post;
     }
-    public void addLike(Like like){
-        likes.add(like);
-    }
-    public void removeLike(Like like){
-        likes.remove(like);
-    }
+
 }
