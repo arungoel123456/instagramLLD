@@ -12,13 +12,11 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void likeOnComment(Like like, Comment comment) {
-        // will I get like directly here , if yes how? Shouldn't I create a like?
         comment.addLike(like);
     }
 
     @Override
     public void unlikeOnComment(Like like, Comment comment) {
-        // will I get like directly here , if yes how?
         comment.removeLike(like);
     }
 

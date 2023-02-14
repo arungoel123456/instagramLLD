@@ -7,6 +7,27 @@ public class Profile {
     private List<User> followers;
     private List<User> followings;
     private List<Post> posts;
+    private List<FollowRequest> followRequests;
+    private Timeline timeline;
+
+    public Timeline getTimeline() {
+        return timeline;
+    }
+
+    public void setTimeline(Timeline timeline) {
+        this.timeline = timeline;
+    }
+
+    public List<FollowRequest> getFollowRequests() {
+        return followRequests;
+    }
+
+    public void setFollowRequests(List<FollowRequest> followRequests) {
+        this.followRequests = followRequests;
+    }
+    public void addFollowRequest(FollowRequest followRequest){
+        this.followRequests.add(followRequest);
+    }
 
     public boolean isPrivate() {
         return isPrivate;

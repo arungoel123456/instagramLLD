@@ -2,17 +2,16 @@ package com.demo.facebook.dto;
 
 import java.util.*;
 
-public class Post {
+public class Post extends Likeable {
     private String description;
     private User createdBy;
     private List<Comment> comments;
-    private List<Like> likes;
 
     public Post(String description, User createdBy) {
+        super();
         this.description = description;
         this.createdBy = createdBy;
         this.comments = new ArrayList<Comment>();
-        this.likes= new ArrayList<Like>();
     }
 
     public String getDescription() {
@@ -36,17 +35,12 @@ public class Post {
         return;
     }
 
-    public void addLike(Like like){
-        likes.add(like);
-    }
-
     @Override
     public String toString() {
         return "Post{" +
                 "description='" + description + '\'' +
                 ", createdBy=" + createdBy +
                 ", comments=" + comments +
-                ", likes=" + likes +
                 '}';
     }
 }

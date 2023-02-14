@@ -12,7 +12,6 @@ public class FollowRequest {
         this.sender = sender;
         this.receiver = receiver;
         this.followRequestStatus = new HoldState();
-
     }
 
     public User getSender() {

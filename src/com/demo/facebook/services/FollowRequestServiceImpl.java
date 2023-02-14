@@ -5,15 +5,21 @@ import com.demo.facebook.enums.*;
 import com.demo.facebook.followRequestState.*;
 import com.demo.facebook.interfaces.*;
 
+import java.util.*;
+
 public class FollowRequestServiceImpl implements FollowRequestService {
     @Override
-    public void fetchAllRequests() {
+    public List<FollowRequest> fetchAllRequests(User user) {
         // how to fetch all the requests? where had we stored all the requests?
+        return user.getProfile().getFollowRequests();
     }
 
     @Override
     public void createFollowRequests(User sender, User receiver) {
         FollowRequest followRequest= new FollowRequest(sender, receiver);
+
+        // added follow requests
+        receiver.getProfile().addFollowRequest(followRequest);
         followRequest.getFollowRequestStatus().notifyUser(receiver);
     }
 
